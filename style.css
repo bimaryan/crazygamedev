@@ -1,0 +1,29 @@
+.btnItem:hover {
+    color: white;
+    background-color: blueviolet;
+}
+
+.btnItem:active {
+    background-color: blueviolet;
+}
+
+.btnItems {
+    color: white;
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btnItems:hover {
+    color: white;
+    background-color: rgb(65, 21, 106);
+}
+
+.head {
+    background-color: blueviolet;
+}
+
+.cards {
+    background-color: wheat;
+}
