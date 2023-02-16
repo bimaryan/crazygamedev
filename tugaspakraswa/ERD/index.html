@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style.css"/>
+    <title>CrazyGamedev</title>
 
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">CrazyGamedev</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Store</a>
+            </li>
+            <!--<li class="nav-item">
+              <a class="nav-link" href="#">Library</a>
+            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="/community">Community</a>
+            </li>
+            <li class="nav-item">
+              <div id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <button class="btn btn-link nav-link dropdown-toggle" href="#" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end">
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center" href="#light" type="button"
+                          data-bs-theme-value="light">
+                          <i class="bi bi-sun-fill me-2 opacity-50" data-theme-icon="bi-sun-fill"></i> Light
+                          <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center" href="#dark" type="button"
+                          data-bs-theme-value="dark">
+                          <i class="bi bi-moon-fill me-2 opacity-50" data-theme-icon="bi-moon-fill"></i> Dark
+                          <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center" href="#auto" type="button"
+                          data-bs-theme-value="auto">
+                          <i class="bi bi-circle-half me-2 opacity-50" data-theme-icon="bi-circle-half"></i> Auto
+                          <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-02-16T01:43:17.337Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.41\&quot; etag=\&quot;w8ziM2H4Fz4-iIBDZN7W\&quot; version=\&quot;20.8.20\&quot; type=\&quot;device\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;xOKYXr-nG5rpdAj8RZCn\&quot;&gt;7Vxtl5o4FP41fmwPkAT1o/PS6cuZHnenPbvdLz0MZJQOEpeXqvvrGzRRuGFWxgpGZL5IbkiAex+e3DzJ0EPXs+Vd5Myn98yjQc8yvGUP3fQsyzTtIf/JLKuNxSZkY5hEvidO2hke/P+oMBrCmvoejQsnJowFiT8vGl0WhtRNCjYnitiieNoTC4pXnTsTqhgeXCdQrX/5XjLdWAfE2NnfU38ylVc2DVEzc+TJwhBPHY8tciZ020PXEWPJ5mi2vKZB5jzpl027dy/Ubm8somFSpcF8Eq3+ns/ubuPvsT0O/7n/4/7HG9HLTydIxQOPI+alz7EvbjpZSU9ELA09mnVm9NDVYuon9GHuuFntgsee26bJLOAlkx8++UFwzQIWrdsiz6GDJ5fb4yRizzRXY7sD+viUtWBhkrMb6z9hfxB3UfLM8gFolNBlziR8cEfZjCbRip8iaociHAKPli3Ki110TRmyaS6y8jxHAGqy7Xnnc34g3P6KEFhKCD5433kUuAuVGPDuOPDpWfpfONwsc7jRpMNxmcM/OzOnVe5eAtdq437J7EX/jwIegKSNEbD0i4BKOarjQ2+UDZ+8FLKQFp1dHAq4a/hFssJbIovfxJnrws0yf+bNSpaWfpJrxkvfcjW7RllBtmk6zDFLI5fuH0ATJ5rQZD/LU6+QbqigyYGClGBC2iIaOIn/s5iklAFFXGHMfP5kOUwWIIkwgNrmsUWjfE4B+umDwXQI+tm4RelnjdrtQ/8GkJEWQG4alHvBhrUCm0leSLleizaQuiGrYbSpiUNHmzXTpkwWdIEyhCAkvKpQtvAeBq4by0TB8j0Nf6SOOueIpmz2mMbnnIIhMN5t4ZBDzaAENYPaMjC7JirJE0mOV/ZQiZknki2ttI1KiF5UAkZFbBxKJWB+gUizVGL1FSy3XUPCgxcymtOJSAMlCC0WNTAYhk8/pbaGZf7/SEM/bmMAiHYBQKWq0ntOfa18A5B+AVCXEo6T0lzg7EgOqXtzGol6TXIaZIOc5lBdCZsgp2lYWEJWB+bGwSxzGE3AjIG4ucXka8FMoNoKObhuMHe61QnAPNQLzHCS2D+UmcG0tWkRFqnC1XHAfInKCakK5r5WYLZAdoDRgWC2QL6CoOBXN5hV6eSezh5pUKKcnL8K2wccdHIVFqmiSccltU9Z9OISAmXYQwdGG6AbNz0wqgrUOI2zLTXGaELDLKzpPH3mv5+o+5b/PAT+ik5UommHRGsDiRaXkE2zEq2cC3dp+O+zjQT7ubENxkdiG6iAN802WFX7WrzeYINBgpSRSbN7WFWBqtWbKPv6RUDde5a9AexLMG9jAGCepEEAOlnraOOppJP946leshZchyRwrlg5ewcDM4GSQt3jaV2y1iWCueqOIM3AjMCCAzl4V/apwVzX7rZLBDM6TzArCw6HbvpWFhzgMlzdYFY12hufw8F/TMs2uJ2/TEugkIXVTK9RmRZ3Mu3x6KSyTKsXnSBjz5BWlU4Q1HsbXvLBJTItTZywtXtl4f+InV6IlTfQ8ckR+KSqEIv1EmLh/kn70M09UNElDW/uIRclxFpgVef0KhSxyvzfXiEW6ReByxJiTf0C0AmxRxtPSdXpPtYtP///UbDqcArB3fBkn3Qy7PGgXPlrBXpB2YQy7MG7C8G+76anmqSTYY8HZus8wQxXbQ9dUoCfkcIN/0MOUVXYnmUH3FlXj/xgkh1IQxbyAsrtf1MmK97E608MjvgJJpkvN81Evezo9k/eyBh/HX/9lP3efhl9/iA753e/6b94TW7O3Qd4yXhmlxTfrCKOxZuXB70wOYE/CXnR5YCl3H6V5Ym+6wQjUTHzPS94KZ8tvr8vvSHHyEkBykoy0jKMQ2KtkJHy4u6LiRtw7b47iW5/AQ==&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+    </div>
+
+    <hr>
+
+    <!--Footer-->
+    <footer class="bd-footer py-1 py-md-1" style="background-color: var(--bs-body-bg);">
+      <div class="container py-4 py-md- px-5 px-md-">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/"
+              aria-label="Bootstrap">
+              <img src="https://crazygamedev.bimaryan.repl.co/Img/logo.jpg" width="40" height="32" class="d-block me-2"
+                viewBox="0 0 118 94" role="img">
+              <title >CrazyGamedev</title>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="currentColor" />
+              </svg>
+              <h5>CrazyGamedev</h5>
+            </a>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2">
+                Kami sadar kalau studio ini masih culun (baca: dalam tahap awal). Selama kami masih membuat game dan dengan dukungan kalian semua, kami akan terus berjuang untuk mengembangkan Game-Game lain nya agar menjadi lebih baik lagi. Setiap unduhan dari kamu adalah sebuah dukungan untuk kami.</a>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="https://www.instagram.com/crazy.gamedev/" target="_blank">Instagram</a></li>
+              <li class="mb-2"><a href="https://www.youtube.com/channel/UCai-4PijNwR1vr_ZRqK9mVg"
+                  target="_blank  ">youtube</a></li>
+              <li class="mb-2"><a href="https://CrazyGamedev.bimaryan.repl.co/privacy" target="_blank  ">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--JavaScript-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--custom button-->
+
+    <!--Darkmode-->
+    <script>
+      (() => {
+        'use strict'
+  
+        const storedTheme = localStorage.getItem('theme')
+  
+        const getPreferredTheme = () => {
+          if (storedTheme) {
+            return storedTheme
+          }
+  
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+  
+        const setTheme = function (theme) {
+          if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark')
+          } else {
+            document.documentElement.setAttribute('data-bs-theme', theme)
+          }
+        }
+  
+        setTheme(getPreferredTheme())
+  
+        const showActiveTheme = theme => {
+          const activeThemeIcon = document.querySelector('.theme-icon-active')
+          const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+          const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon
+  
+          document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+            element.classList.remove('active')
+          })
+  
+          btnToActive.classList.add('active')
+          activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive)
+          activeThemeIcon.classList.add(iconOfActiveBtn)
+          activeThemeIcon.dataset.iconActive = iconOfActiveBtn
+        }
+  
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+          if (storedTheme !== 'light' || storedTheme !== 'dark') {
+            setTheme(getPreferredTheme())
+          }
+        })
+  
+        window.addEventListener('DOMContentLoaded', () => {
+          showActiveTheme(getPreferredTheme())
+  
+          document.querySelectorAll('[data-bs-theme-value]')
+            .forEach(toggle => {
+              toggle.addEventListener('click', () => {
+                const theme = toggle.getAttribute('data-bs-theme-value')
+                localStorage.setItem('theme', theme)
+                setTheme(theme)
+                showActiveTheme(theme)
+              })
+            })
+        })
+      })()
+    </script>
+  </body>
+</html>
