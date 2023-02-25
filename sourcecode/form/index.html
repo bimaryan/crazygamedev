@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/style.css"/>
-    <title>CrazyGamedev || SourceCode</title>
+    <title>SoureCode || Form</title>
 
     <style>
 
@@ -88,36 +88,141 @@
     <br>
 
     <div class="container">
-      <h2 class="text-center">Source Code Free</h2>
+
+      <div class="navbar navbar-expand-lg">
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a href="/sourcecode/" class="btn btn-link navbar-brand"><i class="bi bi-arrow-left"></i></a>
+                    <span class="fw-bold" title="BELAJAR HTML #1 Cara Buat Formulir">BELAJAR HTML #1 Cara Buat Formulir</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+      <div class="card">
+        <div class="card-body">
+          <p>Pertama kalian buat file dengan format <code>index.html</code></p>
+          <p>Kedua kalian bisa pencet di keyboard dengan sorcut <code>shift + !</code> lalu tekan <code>Tab</code> di keyboard kalian</p>
+          <script src="https://gitlab.com/-/snippets/2505769.js"></script>
+          <p>Ketiga kalian buat fieldset dengan code berikut ikut ini</p>
+          <script src="https://gitlab.com/-/snippets/2505772.js"></script>
+          <p>keempat kalian buat table di dalam fieldset dengan code berikut</p>
+          <script src="https://gitlab.com/-/snippets/2505774.js"></script>
+          <p>Kelima kalian gabungkan code tersebut seperti code dibawah</p>
+          <script src="https://gitlab.com/-/snippets/2505767.js"></script>
+
+          <p>Silahkan langsung lihat Hasil nya --> <button class="btn btn-info" onclick="show()">DEMO</button></p>
+
+          <div id="myDIV">
+            <div class="card mt-4">
+              <div class="card-header">
+                DEMO
+              </div>
+              <div class="card-body">
+                <h2 align="center">Formulir Pendaftaran Mahasiswa Baru Politeknik Negeri Indramayu</h2>
+                <br/>
+                <table>
+                  <tr>
+                      <td>Nama Depan</td>
+                      <td>:</td>
+                      <td> <input type="text" name="nama_depan"/></td>
+                  </tr>
+                  <tr>
+                      <td>Nama Belakang</td>
+                      <td>:</td>
+                      <td> <input type="text" name="nama_belakang"/></td>
+                  </tr>
+                  <tr>
+                      <td>NIK</td>
+                      <td>:</td>
+                      <td><input type="text" name="nik"/></td>
+                  </tr>
+                  <tr>
+                      <td>Tempat Lahir</td>
+                      <td>:</td>
+                      <td><input type="text"  name="tempat_lahir"/></td>
+                  </tr>
+                  <tr>
+                      <td>Tanggal Lahir</td>
+                      <td>:</td>
+                      <td><input type="date" name="tanggal_lahir"/> </td>
+                  </tr>
+                  <tr>
+                      <td>Jenis Kelamin</td>
+                      <td>:</td>
+                      <td>
+                          <input type="checkbox" name="jenis kelamin" value="Laki-laki"/> Laki-Laki
+                          <input type="checkbox" name="jenis kelamin" value="Perempuan"/> Perempuan
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Umur</td>
+                      <td>:</td>
+                      <td><input type="number" name="umur"/></td>
+                  </tr>
+                  <tr>
+                      <td>Pendidikan Terakhir</td>
+                      <td>:</td>
+                      <td>
+                          <input type="radio" name="Pendidikan Terakhir" value="sma"/> SMA
+                          <input type="radio" name="Pendidikan Terakhir" value="smk"/> SMK
+                          <input type="radio" name="Pendidikan Terakhir" value="lainnya"/> Lainnya
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Jurusan yang dipilih</td>
+                      <td>:</td>
+                      <td>
+                          <select name="Jurusan">
+                              <option value="Keperawatan">D3 Keperawatan</option>
+                              <option value="Teknik Mesin">D3 Teknik Mesin</option>
+                              <option value="Teknik Informatika">D3 Teknik Informatika</option>
+                              <option value="Teknik Pendingin dan Tata Udara">D4 Teknik Pendingin dan Tata Udara</option>
+                              <option value="Rekayasa Perangkat Lunak">D4 Rekayasa Perangkat Lunak</option>
+                          </select>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Nomor Telepon</td>
+                      <td> : </td>
+                      <td><input type="tel"  name="Nomor_telepon"/> </td>
+                  </tr>
+                  <tr>
+                      <td>Alamat Email</td>
+                      <td> : </td>
+                      <td><input type="email" name="email"/> </td>
+                  </tr>
+                  <tr>
+                      <td>Motifasi mendaftar di POLINDRA</td>
+                      <td> : </td>
+                      <td><textarea name="Tulis alasan anda" cols="100" rows="5" placeholder="Tuliskan alasan anda"></textarea> </td>
+                  </tr>
+                  <tr>
+                      <td> Upload Foto </td>
+                      <td> : </td>
+                      <td><input type="file" size="25" name="file"/> </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <fieldset>
+                              <legend>Opsi</legend>
+                              <input type="submit" value="kirim"/>
+                              <input type="reset" value="Reset"/>
+                          </fieldset>
+                      </td>
+                  </tr>
+              </table>
+
+              <b>Note: Pastikan data yang anda isikan sudah benar sebelum dikirm!</b>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <!--HTML, CSS, and JS-->
-      <div class="card mt-4">
-        <div class="card-header">
-          HTML, CSS, and JS
-        </div>
-        <div class="card-body">
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/form/" tabindex="_blank"><i class="bi bi-filetype-html"></i> Cara buat Formulir di HTML5</a>
-            </li>
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/copy/" tabindex="_blank"><i class="bi bi-clipboard"></i> Cara buat Tombol Copy di HTML5</a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <!--END-->
-
-      <!--PHP-->
-      <div class="card mt-4">
-        <div class="card-header">
-          PHP
-        </div>
-        <div class="card-body">
-
-        </div>
-      </div>
-      <!--END-->
     </div>
 
     <hr>
@@ -225,6 +330,16 @@
             })
         })
       })()
+    </script>
+    <script>
+      function show() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
     </script>
   </body>
 </html>
