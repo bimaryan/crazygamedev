@@ -27,7 +27,7 @@ if (mysqli_query($conn, $sql)) {
 echo "<script type='text/javascript'>alert('Data berhasil ditambahkan');</script>";
 
 // Alihkan ke halaman pertama setelah submit
-header("Location: index.php");
+header("Location: index.html");
 exit;
 
 // Tutup koneksi
