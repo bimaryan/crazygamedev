@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <title>Pupuk Petani</title>
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/pupukpetani">Pupuk Petani</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/pupukpetani/">Home</a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="#">Library</a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="/pupukpetani/create.php">Create New</a>
+          </li>
+          <li class="nav-item">
+            <div id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" href="#" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end">
+                    <li>
+                      <button class="dropdown-item d-flex align-items-center" href="#light" type="button"
+                        data-bs-theme-value="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50" data-theme-icon="bi-sun-fill"></i> Light
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item d-flex align-items-center" href="#dark" type="button"
+                        data-bs-theme-value="dark">
+                        <i class="bi bi-moon-fill me-2 opacity-50" data-theme-icon="bi-moon-fill"></i> Dark
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item d-flex align-items-center" href="#auto" type="button"
+                        data-bs-theme-value="auto">
+                        <i class="bi bi-circle-half me-2 opacity-50" data-theme-icon="bi-circle-half"></i> Auto
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h4>Data Pupuk Petani</h4>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tr class="text-center">
+            <th>ID Pupuk</th>
+            <th>Nama Pupuk</th>
+            <th>Harga</th>
+          </tr>
+          <?php
+          // Koneksi ke database MySQL
+          $host = "localhost";
+          $user = "root";
+          $password = "";
+          $dbname = "pupuk";
+          $conn = mysqli_connect($host, $user, $password, $dbname);
+          if (!$conn) {
+            die("Koneksi gagal: " . mysqli_connect_error());
+          }
+
+          // Cek apakah ada data yang ingin dihapus
+          if (isset($_GET["id_pupuk"])) {
+            $id_pupuk = $_GET["id_pupuk"];
+            $sql = "DELETE FROM pupukk WHERE id_pupuk = '$id_pupuk'";
+            if (mysqli_query($conn, $sql)) {
+              echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Data telah dihapus<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+            } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+          }
+      
+          // Eksekusi query untuk menampilkan data
+          $sql = "SELECT id_pupuk, nama_pupuk, harga FROM pupukk";
+          $result = mysqli_query($conn, $sql);
+      
+          // Tampilkan data
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo "<tr class='text-center'>";
+              echo "<td>" . $row["id_pupuk"] . "</td>";
+              echo "<td>" . $row["nama_pupuk"] . "</td>";
+              echo "<td>" . $row["harga"] . "</td>";
+              echo "<td><a class='btn btn-danger btn-sm' href='index.php?id_pupuk=" . $row["id_pupuk"] . "'>Delete</a></td>";
+              echo "</tr>";
+            }
+          } else {
+            echo "<tr class='text-center'><td colspan='3'>Tidak ada data</td></tr>";
+          }
+      
+          // Tutup koneksi
+          mysqli_close($conn);
+          ?>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!--Footer-->
+  <footer class="card-footer bg-primary fixed-bottom">
+    <div class="container-fluid">
+      <div class="text-center">
+        <p class="mt-2">Made in Ryaze</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  <!--Darkmode-->
+  <script>
+    (() => {
+      'use strict'
+
+      const storedTheme = localStorage.getItem('theme')
+
+      const getPreferredTheme = () => {
+        if (storedTheme) {
+          return storedTheme
+        }
+
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
+
+      const setTheme = function (theme) {
+        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark')
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme)
+        }
+      }
+
+      setTheme(getPreferredTheme())
+
+      const showActiveTheme = theme => {
+        const activeThemeIcon = document.querySelector('.theme-icon-active')
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+        const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon
+
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active')
+        })
+
+        btnToActive.classList.add('active')
+        activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive)
+        activeThemeIcon.classList.add(iconOfActiveBtn)
+        activeThemeIcon.dataset.iconActive = iconOfActiveBtn
+      }
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (storedTheme !== 'light' || storedTheme !== 'dark') {
+          setTheme(getPreferredTheme())
+        }
+      })
+
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              localStorage.setItem('theme', theme)
+              setTheme(theme)
+              showActiveTheme(theme)
+            })
+          })
+      })
+    })()
+  </script>
+  <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
