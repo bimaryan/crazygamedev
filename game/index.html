@@ -91,7 +91,7 @@
       <h2 class="text-center">Games</h2>
       <br>
 
-      <input id="search" class="form-control form-control-sm" onkeyup="search_game()" type="text" name="search" placeholder="Seacrh Games...">
+      <input id="searchbar" class="form-control form-control-sm" onkeyup="search_game()" type="text" name="search" placeholder="Seacrh Games...">
       <br>
       <div class="card">
         <div class="card-body">
@@ -212,7 +212,7 @@
     </script>
     <script>
         function search_game() {
-            let input = document.getElementById("searchbar").value
+            let input = document.getElementById('searchbar').value
             input=input.toLowerCase();
             let x = document.getElementsByClassName('game');
 
