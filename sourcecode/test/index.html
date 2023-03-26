@@ -14,8 +14,25 @@
     <title>SoureCode || Copy</title>
 
     <style>
-
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        padding: 12px 16px;
+      }
+  
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
     </style>
+
   </head>
   <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
@@ -79,8 +96,14 @@
               </div>
             </li>
             <li class="nav-item">
-              <input class="form-control" type="text" id="searchInput" placeholder="Search...">
-              <button class="btn-sm btn btn-success" type="button" onclick="search()">Search</button>
+              <div class="dropdown">
+                <input class="form-control form-control-sm nav-link" type="text" placeholder="Search...">
+                <div class="dropdown-content">
+                  <a href="#">Result 1</a>
+                  <a href="#">Result 2</a>
+                  <a href="#">Result 3</a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -247,24 +270,27 @@
 
     <!-- JavaScript -->
     <script>
-      function search() {
-        // Ambil nilai dari input search
-        const query = document.getElementById("searchInput").value;
-        
-        // Lakukan pencarian data menggunakan API atau data yang tersedia
-        // Di sini saya hanya memberikan contoh menggunakan data statis
-        const data = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
-        const results = data.filter(item => item.toLowerCase().includes(query.toLowerCase()));
-
-        // Tampilkan hasil pencarian
-        const resultList = document.getElementById("results");
-        resultList.innerHTML = "";
-        results.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          resultList.appendChild(li);
-        });
-      }
+      // get input and dropdown content elements
+      var input = document.querySelector('input');
+      var dropdownContent = document.querySelector('.dropdown-content');
+  
+      // add event listener to input
+      input.addEventListener('input', function() {
+        // get search term
+        var searchTerm = input.value.toLowerCase();
+  
+        // get all the links in the dropdown content
+        var links = dropdownContent.getElementsByTagName('a');
+  
+        // loop through the links and show/hide them based on the search term
+        for (var i = 0; i < links.length; i++) {
+          if (links[i].innerHTML.toLowerCase().indexOf(searchTerm) >= 0) {
+            links[i].style.display = 'block';
+          } else {
+            links[i].style.display = 'none';
+          }
+        }
+      });
     </script>
   </body>
 </html>
