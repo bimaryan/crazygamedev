@@ -1,6 +1,6 @@
-// Set up the download button
-const downloadBtn = document.getElementById("download-btn");
-const downloadLink = "/game/drawing & coloring/apk/Drawing & Coloring.apk"; // Ganti dengan nama file yang ingin diunduh
+// Set up the download link
+const downloadLink = document.getElementById("download-link");
+const downloadUrl = "/game/drawing & coloring/apk/Drawing & Coloring.apk"; // Ganti dengan URL file PHP yang akan menghitung jumlah pengunduhan
 
 // Cek apakah browser mendukung localStorage
 if (typeof(Storage) !== "undefined") {
@@ -23,15 +23,30 @@ if (typeof(Storage) !== "undefined") {
   document.body.appendChild(errorElement);
 }
 
-// Atur event listener untuk tombol download
-downloadBtn.addEventListener("click", function() {
-  // Tambahkan 1 ke nilai downloadCount setiap kali tombol download di-klik
+// Atur event listener untuk link download
+downloadLink.addEventListener("click", function(event) {
+  event.preventDefault(); // Menghentikan aksi default link download
+
+  // Tambahkan 1 ke nilai downloadCount setiap kali link download di-klik
   localStorage.downloadCount = Number(localStorage.downloadCount) + 1;
 
   // Tampilkan nilai downloadCount secara real-time di HTML dengan Ajax
   const downloadCount = localStorage.downloadCount;
   $("#download-count").text(downloadCount);
 
-  // Redirect ke file yang akan diunduh
-  window.location.href = downloadLink;
+  // Kirim permintaan Ajax ke server untuk memperbarui jumlah pengunduhan
+  $.ajax({
+    url: downloadUrl,
+    type: "POST",
+    data: {downloadCount: downloadCount},
+    success: function(response) {
+      // Tidak perlu melakukan apa-apa jika permintaan berhasil
+    },
+    error: function(xhr) {
+      console.log("Error: " + xhr.responseText); // Tampilkan pesan error di console
+    }
+  });
+
+  // Redirect ke file yang akan diunduh setelah permintaan Ajax selesai
+  window.location.href = downloadLink.href;
 });
