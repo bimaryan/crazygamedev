@@ -130,7 +130,7 @@
                     <div class="navbar-collapse">
                         <ul class="navbar-nav ms-auto">
                             <li class="navbar-item m-1">
-                                <a href="/game/drawing & coloring/apk/Drawing & Coloring.apk" download class="btn btn-primary download_btn" target="_blank" onclick="trackdownload('drawing')" id="download_drawing"><i class="bi bi-file-earmark-arrow-down"></i> Download</a>
+                                <a href="/game/drawing & coloring/apk/Drawing & Coloring.apk" download class="btn btn-primary download_btn" target="_blank" id="download-btn"><i class="bi bi-file-earmark-arrow-down"></i> Download</a>
                             </li>
                             <li class="navbar-item m-1">
                                 <a href="https://www.mediafire.com/file/vf4jesnigjehmk7/New_Car_Parking.apk/file" class="btn btn-primary download_btn disabled" target="_blank"><i class="bi bi-file-earmark-arrow-down"></i> Mediafire</a>
@@ -141,7 +141,7 @@
                         </ul>
                     </div>
                 </div>
-                <p>Game Drawing & Coloring telah di unduh sebanyak <span id="download_drawing">${fileType}</span> kali</p>
+                <p>Game Drawing & Coloring telah di unduh sebanyak <span id="download_drawing">0</span> kali</p>
             </div>
         </div>
 
@@ -318,19 +318,41 @@
       })()
     </script>
     <script>
-      function trackdownload(fileType) {
-      // Lakukan pelacakan unduhan
-      console.log(`File ${fileType} telah diunduh`);
+      // Set up the download button
+      const downloadBtn = document.getElementById("download-btn");
+      const downloadLink = "file.pdf"; // Ganti dengan nama file yang ingin diunduh
 
-      // Lakukan peningkatan hitungan unduhan
-      let downloadCount = localStorage.getItem(`${fileType}Downloads`) || 0;
-      localStorage.setItem(`${fileType}Downloads`, ++downloadCount);
-    }
-    window.addEventListener('load', function() {
-    let download_drawing = localStorage.getItem('download_drawing') || 0;
+      // Cek apakah browser mendukung localStorage
+      if (typeof(Storage) !== "undefined") {
+        // Jika browser mendukung, cek apakah ada data download yang tersimpan di localStorage
+        if (localStorage.downloadCount) {
+          // Jika ada, ambil nilainya dan tambahkan 1
+          localStorage.downloadCount = Number(localStorage.downloadCount) + 1;
+        } else {
+          // Jika belum ada, inisialisasi dengan 1
+          localStorage.downloadCount = 1;
+        }
 
-      document.getElementById('download_drawing').innerText = download_drawing;
-    });
+        // Setelah nilai downloadCount diupdate, tampilkan nilainya di HTML
+        const downloadCount = localStorage.downloadCount;
+        const downloadCountElement = document.createElement("p");
+        downloadCountElement.textContent = `This file has been downloaded ${downloadCount} times.`;
+        document.body.appendChild(downloadCountElement);
+      } else {
+        // Jika browser tidak mendukung localStorage, tampilkan pesan error
+        const errorElement = document.createElement("p");
+        errorElement.textContent = "Sorry, your browser does not support web storage...";
+        document.body.appendChild(errorElement);
+      }
+
+      // Atur event listener untuk tombol download
+      downloadBtn.addEventListener("click", function() {
+        // Tambahkan 1 ke nilai downloadCount setiap kali tombol download di-klik
+        localStorage.downloadCount = Number(localStorage.downloadCount) + 1;
+        // Redirect ke file yang akan diunduh
+        window.location.href = downloadLink;
+      });
+
 
     </script>
   </body>
