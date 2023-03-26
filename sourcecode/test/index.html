@@ -33,7 +33,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Store</a>
             </li>
@@ -78,6 +78,10 @@
                 </ul>
               </div>
             </li>
+            <li class="nav-item">
+              <input class="form-control" type="text" id="searchInput" placeholder="Search...">
+              <button class="btn-sm btn btn-success" type="button" onclick="search()">Search</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -99,12 +103,7 @@
                 </ul>
             </div>
         </div>
-
-        <video controls poster="/sourcecode/">
-            <source src="/sourcecode/vid/testing.mp4" type="video/mp4">
-            <source src="/sourcecode/vid/testing 2.mp4" type="video/mp4">
-            Upgrade Browser lu bro!!!
-        </video>
+        <ul id="results"></ul>
       
     </div>
 
@@ -244,6 +243,28 @@
         // Memberikan notifikasi bahwa teks telah berhasil dicopy
         alert("Teks berhasil dicopy!");
         }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+      function search() {
+        // Ambil nilai dari input search
+        const query = document.getElementById("searchInput").value;
+        
+        // Lakukan pencarian data menggunakan API atau data yang tersedia
+        // Di sini saya hanya memberikan contoh menggunakan data statis
+        const data = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+        const results = data.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+
+        // Tampilkan hasil pencarian
+        const resultList = document.getElementById("results");
+        resultList.innerHTML = "";
+        results.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          resultList.appendChild(li);
+        });
+      }
     </script>
   </body>
 </html>
