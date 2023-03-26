@@ -130,7 +130,7 @@
                     <div class="navbar-collapse">
                         <ul class="navbar-nav ms-auto">
                             <li class="navbar-item m-1">
-                                <a href="/game/drawing & coloring/apk/Drawing & Coloring.apk" download class="btn btn-primary download_btn" target="_blank"><i class="bi bi-file-earmark-arrow-down"></i> Download</a>
+                                <a href="/game/drawing & coloring/apk/Drawing & Coloring.apk" download class="btn btn-primary download_btn" target="_blank" onclick="trackdownload('drawing')" id="download_drawing"><i class="bi bi-file-earmark-arrow-down"></i> Download</a>
                             </li>
                             <li class="navbar-item m-1">
                                 <a href="https://www.mediafire.com/file/vf4jesnigjehmk7/New_Car_Parking.apk/file" class="btn btn-primary download_btn disabled" target="_blank"><i class="bi bi-file-earmark-arrow-down"></i> Mediafire</a>
@@ -140,6 +140,7 @@
                             </li>
                         </ul>
                     </div>
+                    <p>Game Drawing & Coloring telah di undung sebanyak <span id="download_drawing">0</span> kali</p>
                 </div>
             </div>
         </div>
@@ -315,6 +316,22 @@
             })
         })
       })()
+    </script>
+    <script>
+      function trackdownload(fileType) {
+      // Lakukan pelacakan unduhan
+      console.log(`File ${fileType} telah diunduh`);
+
+      // Lakukan peningkatan hitungan unduhan
+      let downloadCount = localStorage.getItem(`${fileType}Downloads`) || 0;
+      localStorage.setItem(`${fileType}Downloads`, ++downloadCount);
+    }
+    window.addEventListener('load', function() {
+    let download_drawing = localStorage.getItem('download_drawing') || 0;
+
+    document.getElementById('download_drawing').innerText = htmlDownloads;
+  });
+
     </script>
   </body>
 </html>
