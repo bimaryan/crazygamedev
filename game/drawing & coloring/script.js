@@ -81,7 +81,7 @@ downloadLink.addEventListener("click", function(event) {
     xhr.send();
   }
 
-  downloadFile("https://crazygamedev.vercel.app/game/drawing & coloring/apk/Drawing & Coloring.apk", 100000); // Mengunduh file dengan kecepatan maksimum 100 KBps
+  downloadFile("https://crazygamedev.vercel.app/game/drawing & coloring/apk/Drawing & Coloring.apk", 200000); // Mengunduh file dengan kecepatan maksimum 100 KBps
 
   
 });
