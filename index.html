@@ -20,7 +20,7 @@
       }
   
       .dropdown-content {
-        display: block;
+        display: none;
         position: absolute;
         z-index: 1;
         min-width: 160px;
@@ -28,8 +28,8 @@
         padding: 12px 16px;
       }
   
-      .dropdown:hover {
-        display: none;
+      .dropdown:hover .dropdown-content {
+        display: block;
       }
     </style>
   </head>
@@ -360,9 +360,9 @@
         // loop through the links and show/hide them based on the search term
         for (var i = 0; i < links.length; i++) {
           if (links[i].innerHTML.toLowerCase().indexOf(searchTerm) >= 0) {
-            links[i].style.display = 'block';
-          } else {
             links[i].style.display = 'none';
+          } else {
+            links[i].style.display = 'block';
           }
         }
       });
