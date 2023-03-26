@@ -49,4 +49,39 @@ downloadLink.addEventListener("click", function(event) {
 
   // Redirect ke file yang akan diunduh setelah permintaan Ajax selesai
   window.location.href = downloadLink.href;
+
+  function downloadFile(url, maxSpeed) {
+    // Membuat sebuah XMLHttpRequest
+    const xhr = new XMLHttpRequest();
+  
+    // Menentukan URL file yang akan diunduh
+    xhr.open("GET", url, true);
+  
+    // Mengatur throttle pada kecepatan unduhan
+    let lastTime = 0;
+    let bytesDownloaded = 0;
+    xhr.onprogress = function(event) {
+      const currentTime = Date.now();
+      const deltaTime = currentTime - lastTime;
+      const deltaBytes = event.loaded - bytesDownloaded;
+      const deltaSpeed = deltaBytes / deltaTime;
+      if (deltaSpeed > maxSpeed) {
+        const delay = deltaBytes / maxSpeed - deltaTime;
+        if (delay > 0) {
+          setTimeout(function() {
+            xhr.abort();
+          }, delay);
+        }
+      }
+      lastTime = currentTime;
+      bytesDownloaded = event.loaded;
+    };
+  
+    // Mengirim request untuk mengunduh file
+    xhr.send();
+  }
+
+  downloadFile("https://crazygamedev.vercel.app/game/drawing & coloring/apk/Drawing & Coloring.apk", 100000); // Mengunduh file dengan kecepatan maksimum 100 KBps
+
+  
 });
