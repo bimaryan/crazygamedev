@@ -141,6 +141,7 @@
                         </ul>
                     </div>
                 </div>
+                <p>Game Drawing & Coloring di unduh sebanyak <span id="download-count">0</span> kali</p>
             </div>
         </div>
 
@@ -322,7 +323,7 @@
       const downloadLink = "/game/drawing & coloring/apk/Drawing & Coloring.apk"; // Ganti dengan nama file yang ingin diunduh
 
       // Cek apakah browser mendukung localStorage
-      if (typeof(Storage) !== "undefined") {
+      if (typeof (Storage) !== "undefined") {
         // Jika browser mendukung, cek apakah ada data download yang tersimpan di localStorage
         if (localStorage.downloadCount) {
           // Jika ada, ambil nilainya dan tambahkan 1
@@ -332,11 +333,9 @@
           localStorage.downloadCount = 1;
         }
 
-        // Setelah nilai downloadCount diupdate, tampilkan nilainya di HTML
+        // Setelah nilai downloadCount diupdate, tampilkan nilainya di HTML secara real-time dengan Ajax
         const downloadCount = localStorage.downloadCount;
-        const downloadCountElement = document.createElement("p");
-        downloadCountElement.textContent = `This file has been downloaded ${downloadCount} times.`;
-        document.body.appendChild(downloadCountElement);
+        $("#download-count").text(downloadCount);
       } else {
         // Jika browser tidak mendukung localStorage, tampilkan pesan error
         const errorElement = document.createElement("p");
@@ -348,11 +347,14 @@
       downloadBtn.addEventListener("click", function() {
         // Tambahkan 1 ke nilai downloadCount setiap kali tombol download di-klik
         localStorage.downloadCount = Number(localStorage.downloadCount) + 1;
+
+        // Tampilkan nilai downloadCount secara real-time di HTML dengan Ajax
+        const downloadCount = localStorage.downloadCount;
+        $("#download-count").text(downloadCount);
+
         // Redirect ke file yang akan diunduh
         window.location.href = downloadLink;
       });
-
-
     </script>
   </body>
 </html>
