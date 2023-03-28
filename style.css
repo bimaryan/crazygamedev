@@ -27,3 +27,8 @@
 .cards {
     background-color: wheat;
 }
+
+.navbar {
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
