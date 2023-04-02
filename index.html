@@ -20,6 +20,8 @@
       }
   
       .dropdown-content {
+        background: transparent;
+        backdrop-filter: blur(8px);
         display: none;
         position: absolute;
         z-index: 1;
@@ -62,7 +64,7 @@
             <li class="nav-item">
               <div class="dropdown">
                 <input class="form-control" type="text" placeholder="Search...">
-                <div class="dropdown-content bg-primary">
+                <div class="dropdown-content">
                   <a href="/game/" class="nav-link">Game Buatan Kami</a>
                   <a href="/sourcecode/" class="nav-link">Source Code</a>
                   <a href="/privacypolicy/" class="nav-link">Privacy Policy</a>
