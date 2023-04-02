@@ -100,58 +100,52 @@
             </div>
         </div>
 
-
+        <p>code HTML, CSS, dan JS untuk membuat tombol copy dan input pada sebuah halaman web.</p>
+        <script src="https://gitlab.com/-/snippets/2505857.js"></script>
+        <p>Penjelasan:</p>
         <div class="card">
-            <div class="card-body">
-                <p>code HTML, CSS, dan JS untuk membuat tombol copy dan input pada sebuah halaman web.</p>
-                <script src="https://gitlab.com/-/snippets/2505857.js"></script>
-                <p>Penjelasan:</p>
-                <div class="card">
-                  <div class="card-body">
-                    <ul>
-                      <li>
-                        Elemen <code>&lt;input&gt;</code> digunakan untuk membuat input teks yang akan dicopy.
-                      </li>
-                      <li>
-                        Elemen <code>&lt;button&gt;</code> digunakan untuk membuat tombol copy yang akan memicu fungsi copyText() saat diklik.
-                      </li>
-                      <li>
-                        Pada fungsi <code>copyText()</code>, kita mendapatkan nilai dari elemen input dengan menggunakan <code>document.getElementById("text-to-copy").value.</code>
-                      </li>
-                      <li>
-                        Kemudian, kita membuat sebuah elemen <code>&lt;textarea&gt;</code> baru untuk menyimpan nilai yang telah dicopy, dan menambahkannya ke dalam dokumen dengan <code>document.body.appendChild(tempElem).</code>
-                      </li>
-                      <li>
-                        Selanjutnya, kita memilih elemen <code>&lt;textarea &gt;</code> yang baru dibuat dan menyalin teks yang ada di dalamnya dengan menggunakan <code>tempElem.select()</code> dan <code>document.execCommand("copy").</code>
-                      </li>
-                      <li>
-                        Setelah itu, kita menghapus elemen <code>&lt;textarea&gt;</code> yang baru saja dibuat dengan menggunakan <code>document.body.removeChild(tempElem).</code>
-                      </li>
-                      <li>
-                        Akhirnya, kita memberikan notifikasi dengan <code>alert()</code> bahwa teks telah berhasil dicopy.
-                      </li>
-                    </ul>
-                    <p>
-                      Dengan kode di atas, sebuah halaman web akan memiliki input teks dan tombol copy yang dapat digunakan untuk menyalin teks tersebut. Saat tombol copy diklik, fungsi <code>copyText()</code> akan dijalankan dan teks pada input akan dicopy ke clipboard pengguna, serta memberikan notifikasi bahwa teks telah berhasil dicopy.
-                    </p>
-                  </div>
-                </div>
-                <p class="mt-3">Silahkan langsung lihat Hasil nya --> <button class="btn btn-info" onclick="show()">DEMO</button></p>
+          <div class="card-body">
+            <ul>
+              <li>
+                Elemen <code>&lt;input&gt;</code> digunakan untuk membuat input teks yang akan dicopy.
+              </li>
+              <li>
+                Elemen <code>&lt;button&gt;</code> digunakan untuk membuat tombol copy yang akan memicu fungsi copyText() saat diklik.
+              </li>
+              <li>
+                Pada fungsi <code>copyText()</code>, kita mendapatkan nilai dari elemen input dengan menggunakan <code>document.getElementById("text-to-copy").value.</code>
+              </li>
+              <li>
+                Kemudian, kita membuat sebuah elemen <code>&lt;textarea&gt;</code> baru untuk menyimpan nilai yang telah dicopy, dan menambahkannya ke dalam dokumen dengan <code>document.body.appendChild(tempElem).</code>
+              </li>
+              <li>
+                Selanjutnya, kita memilih elemen <code>&lt;textarea &gt;</code> yang baru dibuat dan menyalin teks yang ada di dalamnya dengan menggunakan <code>tempElem.select()</code> dan <code>document.execCommand("copy").</code>
+              </li>
+              <li>
+                Setelah itu, kita menghapus elemen <code>&lt;textarea&gt;</code> yang baru saja dibuat dengan menggunakan <code>document.body.removeChild(tempElem).</code>
+              </li>
+              <li>
+                Akhirnya, kita memberikan notifikasi dengan <code>alert()</code> bahwa teks telah berhasil dicopy.
+              </li>
+            </ul>
+            <p>
+              Dengan kode di atas, sebuah halaman web akan memiliki input teks dan tombol copy yang dapat digunakan untuk menyalin teks tersebut. Saat tombol copy diklik, fungsi <code>copyText()</code> akan dijalankan dan teks pada input akan dicopy ke clipboard pengguna, serta memberikan notifikasi bahwa teks telah berhasil dicopy.
+            </p>
+          </div>
+        </div>
+        <p class="mt-3">Silahkan langsung lihat Hasil nya --> <button class="btn btn-info" onclick="show()">DEMO</button></p>
 
-                <div class="card" id="myDIV">
-                    <div class="card-header">
-                        DEMO
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <input class="form-control" type="text" id="text-to-copy" value="Teks yang akan dicopy" readonly>
-                            <button title="copy text" class="btn btn-outline-success"  onclick="copyText()"><i class="bi bi-clipboard"></i></button>
-                        </div>                          
-                    </div>
-                </div>
+        <div class="card" id="myDIV">
+            <div class="card-header">
+                DEMO
+            </div>
+            <div class="card-body">
+                <div class="d-flex">
+                    <input class="form-control" type="text" id="text-to-copy" value="Teks yang akan dicopy" readonly>
+                    <button title="copy text" class="btn btn-outline-success"  onclick="copyText()"><i class="bi bi-clipboard"></i></button>
+                </div>                          
             </div>
         </div>
-      
     </div>
 
     <hr>
