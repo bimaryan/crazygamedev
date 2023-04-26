@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="/style.css"/>
     <title>GoogleCollab KW</title>
 
-    <style>
-
-    </style>
+    <py-env>
+      -turtle
+    </py-env>
   </head>
   <body>
     <header class="navbar navbar-expand-lg fixed-top shadow">
@@ -259,21 +259,6 @@
         // Memberikan notifikasi bahwa teks telah berhasil dicopy
         alert("Teks berhasil dicopy!");
         }
-    </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.23.1/full/pyodide.js"></script>
-    <script type="text/javascript">
-      async function main() {
-        let pyodide = await loadPyodide();
-        await pyodide.loadPackage("turtle");
-        const turtle = pyodide.pyimport("turtle");
-        await turtle.install("snowballstemmer");
-        await pyodide.runPython(`
-        import snowballstemmer
-        stemmer = snowballstemmer.stemmer('english')
-        print(stemmer.stemWords('go goes going gone'.split()))
-      `);
-      }
-      main();
     </script>
   </body>
 </html>
