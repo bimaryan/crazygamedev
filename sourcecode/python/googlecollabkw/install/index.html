@@ -115,10 +115,11 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Include via CDN</h1>
+                      <button type="button" class="btn-copy" onclick="copyText()"></button>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <code class="form-control">
+                        <code class="form-control" id="text-to-copy">
                             &lt;link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /&gt;<br>
                             &lt;script defer src="https://pyscript.net/latest/pyscript.js"&gt;&lt;/script&gt;
                         </code>
@@ -246,6 +247,27 @@
         x.style.display = "none";
       }
     }
+    </script>
+    <script>
+        function copyText() {
+        // Mendapatkan nilai dari elemen input
+        var textToCopy = document.getElementById("text-to-copy").value;
+
+        // Membuat elemen baru untuk menyimpan nilai yang telah dicopy
+        var tempElem = document.createElement("textarea");
+        tempElem.value = textToCopy;
+        document.body.appendChild(tempElem);
+
+        // Memilih elemen baru dan menyalin teks
+        tempElem.select();
+        document.execCommand("copy");
+
+        // Menghapus elemen baru
+        document.body.removeChild(tempElem);
+
+        // Memberikan notifikasi bahwa teks telah berhasil dicopy
+        alert("Teks berhasil dicopy!");
+        }
     </script>
     <script>
         function copyText() {
