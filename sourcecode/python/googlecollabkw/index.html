@@ -260,5 +260,20 @@
         alert("Teks berhasil dicopy!");
         }
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.23.1/full/pyodide.js"></script>
+    <script type="text/javascript">
+      async function main() {
+        let pyodide = await loadPyodide();
+        await pyodide.loadPackage("turtle");
+        const turtle = pyodide.pyimport("turtle");
+        await turtle.install("snowballstemmer");
+        await pyodide.runPython(`
+        import snowballstemmer
+        stemmer = snowballstemmer.stemmer('english')
+        print(stemmer.stemWords('go goes going gone'.split()))
+      `);
+      }
+      main();
+    </script>
   </body>
 </html>
