@@ -9,44 +9,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
 }
 
 .error-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    font-size: 12em;
-    color: #e74c3c;
+    font-size: 8rem;
+    color: #ff6f61;
     margin: 0;
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
 }
 
 h2 {
-    font-size: 2em;
-    color: #333;
+    font-size: 3rem;
+    color: #3f4e5b;
     margin: 20px 0;
+    text-shadow: 0 0 10px rgba(63, 78, 91, 0.5);
 }
 
 p {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.5rem;
+    color: #3f4e5b;
     text-align: center;
     margin-bottom: 20px;
 }
 
 a {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #fff;
-    background-color: #3498db;
+    background-color: #76b7e3;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-    background-color: #2980b9;
+    background-color: #5b9cd6;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    a {
+        font-size: 1rem;
+    }
 }
