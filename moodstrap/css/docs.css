@@ -115,12 +115,13 @@
 .screen {
     color: white;
     background-color: #1D1E22;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
     box-sizing: border-box;
     margin: 0 auto;
     overflow: hidden;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    border-radius: 8px;
 }
 
 @media (min-width: 576px) {
