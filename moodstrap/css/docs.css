@@ -113,13 +113,14 @@
 }
 
 .screen {
+    color: white;
     background-color: #1D1E22;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     box-sizing: border-box;
     margin: 0 auto;
     overflow: hidden;
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
 }
 
 @media (min-width: 576px) {
