@@ -4525,6 +4525,11 @@ fieldset:disabled .btn {
     justify-content: space-between
 }
 
+.navbar-no-background {
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
 .navbar-brand {
     padding-top: var(--bs-navbar-brand-padding-y);
     padding-bottom: var(--bs-navbar-brand-padding-y);
