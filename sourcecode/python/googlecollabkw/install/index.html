@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/sourcecode/python/googlecollabkw/install/style.css"/>
-    <link rel="stylesheet" href="/sourcecode/python/googlecollabkw/example/examples.css" />
     <link rel="stylesheet" href="/style.css"/>
     <title>Pyscript | Run Python In Your HTML</title>
   </head>
@@ -90,23 +89,14 @@
             <h4 class="fw-bold text-center">Run Python in Your HTML</h4>
             <br>
 
-            <py-tutor>
-              <py-config>
-                plugins = [
-                  "https://crazygamedev.netlify.app/sourcecode/python/googlecollabkw/example/py_tutor.py"
-                ]
-              </py-config>
-              <pre class="center border border-black container rounded bg-black text-white">
-                <section>
-                  &lt;html&gt;
-                      ...
-                      &lt;py-script&gt;
-                              print('Now you can!')
-                      &lt;/py-script&gt;
-                  &lt;/html&gt;
-                </section>
-              </pre>
-            </py-tutor>
+            <pre class="center border border-black container rounded bg-black text-white">
+&lt;html&gt;
+    ...
+    &lt;py-script&gt;
+            print('Now you can!')
+    &lt;/py-script&gt;
+&lt;/html&gt;
+            </pre>
         </header>
         <div class="">
             <center>
@@ -183,7 +173,6 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <script defer src="https://crazygamedev.netlify.app/sourcecode/python/googlecollabkw/pyscript.js"></script>
 
     <!--custom button-->
 
