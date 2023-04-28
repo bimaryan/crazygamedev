@@ -115,8 +115,6 @@
 .screen {
     color: white;
     background-color: #1D1E22;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
     box-sizing: border-box;
     margin: 0 auto;
     overflow: hidden;
