@@ -85,12 +85,12 @@ class PyTutor:
         link.type = "text/css"
         link.rel = "stylesheet"
         js.document.head.appendChild(link)
-        link.href = "./assets/prism/prism.min.css"
+        link.href = "/sourcecode/python/googlecollabkw/example/prism/prism.min.css"
 
         # Add the JS file
         script = js.document.createElement("script")
         script.type = "text/javascript"
-        script.src = "./assets/prism/prism.min.js"
+        script.src = "/sourcecode/python/googlecollabkw/example/prism/prism.min.js"
         js.document.head.appendChild(script)
 
     def _create_code_section(self, source, module_paths=None, parent=None):
