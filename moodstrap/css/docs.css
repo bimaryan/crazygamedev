@@ -112,6 +112,16 @@
     grid-column-start: 11
 }
 
+.screen {
+    background-color: #1D1E22;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 5rem 1rem;
+}
+
 @media (min-width: 576px) {
     .grid .g-col-sm-1 {
         grid-column:auto/span 1
