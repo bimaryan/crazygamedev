@@ -4525,7 +4525,7 @@ fieldset:disabled .btn {
     justify-content: space-between
 }
 
-.navbar-no-background {
+.navbar-no-bg {
     background: transparent;
     backdrop-filter: blur(8px);
 }
