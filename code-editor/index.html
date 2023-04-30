@@ -10,6 +10,7 @@
   <meta property="og:image" content="/assets/logos/code.indgeek.com.jpg" />
   <link rel="shortcut icon" type="image/png" href="">
   <link rel="stylesheet" href="/code-editor/prism/prism.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <title>Coding Playground</title>
 
   <link rel="stylesheet" href="https://crazygamedev.netlify.app/moodstrap/dist/css/moodstrap.min.css" />
@@ -379,38 +380,22 @@
 
   <div class="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            Coding Playground
-          </a>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Coding Playground</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="/" target="_blank">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/moodstrap/" target="_blank">MoodStrap</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sourcecode/python/googlecollabkw/install/" target="_blank">Pyscript</a>
-              </li>
-              <li class="nav-item copy-code" id="copy" title="Copy this code" onclick="copyCode()">
-                <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path data-name="copy-Filled"
-                    d="M11 19.5h5.7A3.978 3.978 0 0 1 13 22H6a4 4 0 0 1-4-4v-8a4.007 4.007 0 0 1 3.5-3.97V14a5.51 5.51 0 0 0 5.5 5.5Zm8.5-13.25h2.12a1.638 1.638 0 0 0-.21-.25L18 2.59a1.156 1.156 0 0 0-.25-.2V4.5a1.758 1.758 0 0 0 1.75 1.75Zm0 1.5a3.256 3.256 0 0 1-3.25-3.25V2H11a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h7a4 4 0 0 0 4-4V7.75Z"
-                    style="fill:white" />
-                </svg>
-              </li>
-              <li class="nav-item justify-content-end">
-                <a class="nav-link btn-web" href="/sourcecode/python/googlecollabkw/" target="_blank">Google Collab</a>
-              </li>
-            </ul>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/moodstrap/">MoodStrap</a>
+              <a class="nav-link" href="/sourcecode/python/googlecollabkw/install/">Pyscript</a>
+              <a class="nav-link copy-code" id="copy" onclick="copyCode()"><i class="bi bi-clipboard"></i></a>
+              <a class="nav-link" href="/sourcecode/python/googlecollabkw/">Google Collab</a>
+            </div>
           </div>
-      </div>
-    </nav>
+        </div>
+      </nav>
   </div>
 
   <div class="main">
