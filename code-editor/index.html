@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta name="author" content="CrazyGamedev">
+  <meta property="og:image" content="/assets/logos/code.indgeek.com.jpg" />
+  <link rel="shortcut icon" type="image/png" href="">
+  <link rel="stylesheet" href="/code-editor/prism/prism.css">
+  <title>Coding Playground</title>
+
+  <link rel="stylesheet" href="https://crazygamedev.netlify.app/moodstrap/dist/css/moodstrap.min.css" />
+</head>
+
+<body>
+
+  <!-- JQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- CSS Style -->
+
+  <style type="text/css">
+    * {
+      background-color: rgb(19, 23, 31);
+
+    }
+
+    br {
+      display: none;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      border: 1px solid #333;
+      font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    iframe {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      resize: both;
+      overflow: auto;
+      border: 1px solid #333;
+    }
+
+    #code-here {
+      border: 1px solid grey;
+      border-left: 4px solid rgb(114, 190, 0);
+      padding: 10px;
+      color: white;
+      max-width: 97.6%;
+      height: 45vh;
+    }
+
+    #code-here:focus {
+      outline: none;
+    }
+
+    #compile {
+      color: rgb(235, 235, 235);
+      background-color: rgb(114, 190, 0);
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-family: 'poppins', Verdana, Geneva, Tahoma, sans-serif
+    }
+
+    #compile:hover {
+      color: rgb(67, 67, 67);
+    }
+
+    #myframe {
+      border: 1px solid grey;
+      border-radius: 2px;
+      max-width: 99%;
+      height: 40vh;
+    }
+
+    .txt-area {
+      padding: 10px 0;
+    }
+
+    .navbar {
+      padding: 8px 15px;
+    }
+
+    .navbar-nav li a {
+      color: white;
+      font-family: 'poppins', Verdana, Geneva, Tahoma, sans-serif
+    }
+
+    .navbar-nav li a:hover {
+      color: rgb(114, 190, 0);
+    }
+
+    .main {
+      padding: 8px 15px;
+    }
+
+    .btn-web {
+      background-color: rgb(114, 190, 0);
+      border: none;
+      border-radius: 4px;
+      padding: 5px 20px;
+      color: white !important;
+      margin-left: 10px;
+    }
+
+    .btn-web:hover {
+      color: rgb(67, 67, 67) !important;
+    }
+
+    .justify-content-end {
+      position: absolute;
+      right: 4%;
+    }
+
+    .copy-code {
+      padding: 5px 0 0 5px;
+      cursor: pointer;
+    }
+
+
+    /* toast notification */
+
+    #cooltoast-container {
+      background-color: transparent;
+      color:white;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: auto;
+/*   font-family: 'Helvetica'; */
+}
+
+.cooltoast-toast {
+  position: relative;
+  padding: 8px 12px;
+  margin: 16px;
+  border-radius: 8px;
+  background: #F5F5F5;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.19);
+  animation-duration:  .3s;
+  animation-name: cooltoast;
+  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.cooltoast-fadeOut {
+  animation-name: cooltoastFadeOut;
+  animation-duration: .3s;
+  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation-fill-mode: forwards;
+}
+
+#cooltoast-container p,
+#cooltoast-container h4 {
+  margin: 3px 0!important;
+}
+
+.cooltoast-title {
+  background-color: #F5F5F5 !important;
+  color:#333;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.cooltoast-icon {
+  position: absolute;
+  top: 5px;
+  left: -40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #FFF;
+}
+
+.cooltoast-toast a, .cooltoast-toast a:hover {
+  color: #549EDB !important;
+  text-decoration: none !important;
+}
+
+/** toast types */
+.cooltoast-success {
+  border-bottom: 2px solid #51C625;
+}
+
+@keyframes cooltoast {
+  from {
+    transform: translate3d(400px, 0, 0);;
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes cooltoastFadeOut {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(400px, 0, 0);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width:992px) {
+  #copy-mob{
+    z-index: 9999;
+    position: fixed;
+    left:10px;
+    bottom:10px;
+    padding:5px;
+    border:2px solid green;
+    border-radius:50px;
+  }
+}
+@media screen and (min-width:992px) {
+  #copy-mob{
+    display: none;
+  }
+}
+  </style>
+
+  <!-- JavaScript -->
+
+  <script type="text/javascript">
+    function updateIframe() {
+      var myFrame = $("#myframe").contents().find('body');
+      var textareaValue = $("textarea").val();
+      myFrame.html(textareaValue);
+      myFrame.css('color', 'white');
+    }
+  </script>
+
+  <!-- Copy the snippet -->
+
+  <script>
+    function showNotification(){
+        console.log('works')
+        toast.create({
+            title: 'Code Copied',      
+        });
+      };
+
+      (function(root, factory) {
+        try {
+          // commonjs
+          if (typeof exports === 'object') {
+            module.exports = factory();
+          // global
+          } else {
+            root.toast = factory();
+          }
+        } catch(error) {
+          console.log('Isomorphic compatibility is not supported at this time for toast.')
+        }
+      })(this, function() {
+
+        // We need DOM to be ready
+        if (document.readyState === 'complete') {
+          init();
+        } else {
+          window.addEventListener('DOMContentLoaded', init);
+        }
+
+        // Create toast object
+        toast = {
+          // In case toast creation is attempted before dom has finished loading!
+          create: function() {
+            console.error([
+              'DOM has not finished loading.',
+              '\tInvoke create method when DOM\s readyState is complete'
+            ].join('\n'))
+          }
+        };
+        var autoincrement = 0;
+
+        // Initialize library
+        function init() {
+          // Toast container
+          var container = document.createElement('div');
+          container.id = 'cooltoast-container';
+          document.body.appendChild(container);
+
+          // @Override
+          // Replace create method when DOM has finished loading
+          toast.create = function(options) {
+            var toast = document.createElement('div');
+            toast.id = ++autoincrement;
+            toast.id = 'toast-' + toast.id;
+            toast.className = 'cooltoast-toast';
+
+            // title
+            if (options.title) {
+              var h4 = document.createElement('h4');
+              h4.className = 'cooltoast-title';
+              h4.innerHTML = options.title;
+              toast.appendChild(h4);
+            }
+
+            // text
+            if (options.text) {
+              var p = document.createElement('p');
+              p.className = 'cooltoast-text';
+              p.innerHTML = options.text;
+              toast.appendChild(p);
+            }
+
+            // icon
+            if (options.icon) {
+              var img = document.createElement('img');
+              img.src = options.icon;
+              img.className = 'cooltoast-icon';
+              toast.appendChild(img);
+            }
+
+            // click callback
+            if (typeof options.callback === 'function') {
+              toast.addEventListener('click', options.callback);
+            }
+
+            // toast api
+            toast.hide = function() {
+              toast.className += ' cooltoast-fadeOut';
+              toast.addEventListener('animationend', removeToast, false);
+            };
+
+            // auto hide
+            if (options.timeout) {
+              setTimeout(toast.hide, options.timeout);
+            } 
+            // else setTimeout(toast.hide, 2000);
+
+            if (options.type) {
+              toast.className += ' cooltoast-' + options.type;
+            }
+
+            toast.addEventListener('click', toast.hide);
+
+
+            function removeToast() {
+              document.getElementById('cooltoast-container').removeChild(toast);
+            }
+
+            document.getElementById('cooltoast-container').appendChild(toast);
+            return toast;
+
+          }
+        }
+
+        return toast;
+
+      });
+
+
+
+    function copyCode(){
+      console.log('okay func');
+      var toWrite = document.getElementById("code-here").select();
+      document.execCommand('copy');
+      showNotification()
+      document.getElementById("code-here").blur();
+    };
+  </script>
+  <script src="https://crazygamedev.netlify.app/moodstrap/dist/css/moodstrap.min.js"></script>
+  <script src="/code-editor/prism/prism.js"></script>
+
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="/">
+        Coding Playground
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/" target="_blank">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/moodstrap/" target="_blank">MoodStrap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sourcecode/python/googlecollabkw/install/" target="_blank">Pyscript</a>
+          </li>
+          <li class="nav-item copy-code" id="copy" title="Copy this code" onclick="copyCode()">
+            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path data-name="copy-Filled"
+                d="M11 19.5h5.7A3.978 3.978 0 0 1 13 22H6a4 4 0 0 1-4-4v-8a4.007 4.007 0 0 1 3.5-3.97V14a5.51 5.51 0 0 0 5.5 5.5Zm8.5-13.25h2.12a1.638 1.638 0 0 0-.21-.25L18 2.59a1.156 1.156 0 0 0-.25-.2V4.5a1.758 1.758 0 0 0 1.75 1.75Zm0 1.5a3.256 3.256 0 0 1-3.25-3.25V2H11a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h7a4 4 0 0 0 4-4V7.75Z"
+                style="fill:white" />
+            </svg>
+          </li>
+          <li class="nav-item justify-content-end">
+            <a class="nav-link btn-web" href="/sourcecode/python/googlecollabkw/" target="_blank">Google Collab</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="main">
+    <span class="span-1">
+      <div class="txt-area">
+        <textarea id="code-here" rows="5" cols="50" placeholder="Type HTML Code Here" autofocus spellcheck=”false”>
+<style>
+  h3, p{
+    color:rgb(143, 232, 0);
+    font-family: Verdana, Tahoma, sans-serif;
+  }
+</style>
+
+<h3>Edit HTML Content</h3>
+<p>Welcome to CrazyGamedev Coding Playground</p>
+        </textarea>
+      </div>
+      <button id="compile" style="border:1" type="button" onclick="updateIframe()">Run The
+        Code</button>
+    </span>
+
+    <span class="span-2">
+      <iframe id="myframe"></iframe>
+    </span>
+  </div>
+
+  <span class="copy-code-mob" id="copy-mob" title="Copy this code" onclick="copyCode()">
+    <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path data-name="copy-Filled"
+        d="M11 19.5h5.7A3.978 3.978 0 0 1 13 22H6a4 4 0 0 1-4-4v-8a4.007 4.007 0 0 1 3.5-3.97V14a5.51 5.51 0 0 0 5.5 5.5Zm8.5-13.25h2.12a1.638 1.638 0 0 0-.21-.25L18 2.59a1.156 1.156 0 0 0-.25-.2V4.5a1.758 1.758 0 0 0 1.75 1.75Zm0 1.5a3.256 3.256 0 0 1-3.25-3.25V2H11a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h7a4 4 0 0 0 4-4V7.75Z"
+        style="fill:white" />
+    </svg>
+  </span>
+
+</body>
+
+</html>
