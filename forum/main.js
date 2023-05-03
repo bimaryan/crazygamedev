@@ -17,7 +17,7 @@ form.addEventListener('submit', (event) => {
     }
 
     // Mengirim data ke server (contoh)
-    fetch('https://crazygamedev.netlify.app/send-message', {
+    fetch('https://localhost/send-message', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
