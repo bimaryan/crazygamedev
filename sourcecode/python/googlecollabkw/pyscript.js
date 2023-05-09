@@ -28706,7 +28706,7 @@ var pyscript = (function (exports) {
         // Invariant: this.config is set and available.
         async afterInterpreterLoad(interpreter) {
             console.assert(this.config !== undefined);
-            this.logStatus('Python startup...');
+            this.logStatus('Python startup by CrazyGamedev...');
             await this.interpreter.initializeRemote();
             this.logStatus('Python ready!');
             this.logStatus('Setting up virtual environment...');
