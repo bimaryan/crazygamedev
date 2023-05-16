@@ -103,21 +103,25 @@
         <div>
           <!--Hello World!-->
           <p class="fw-bold">1. python "Hello, World!"</p>
-          <code class="py-repl-editor">
-            <pre class="border border-info container">
-print("Hello, World!")
-            </pre>
-          </code>
+          <div class="py-box">
+            <code class="py-repl-editor">
+              <pre class="border border-info container">
+  print("Hello, World!")
+              </pre>
+            </code>
+          </div>
           <!--Python Date-->
           <p class="fw-bold">2. python Date</p>
-          <code class="py-repl-editor">
-            <pre class="border border-info container">
-import datetime
+          <div class="py-box">
+            <code class="py-repl-editor">
+              <pre class="border border-info container">
+  import datetime
 
-x = datetime.datetime.now()
-print(x)
-            </pre>
-          </code>
+  x = datetime.datetime.now()
+  print(x)
+              </pre>
+            </code>
+          </div>
         </div>
 
         <py-repl auto-generate="true"></py-repl>
