@@ -59,8 +59,7 @@
 }
 
 #unity-footer {
-    background-color: white;
-    border-radius: 4px;
+    position: relative;
 }
 
 .unity-mobile #unity-footer {
