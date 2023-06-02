@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+p {
+    color: #777;
+    margin-top: 5px;
+}
+
+.beta {
+    color: #777;
+    font-size: 10px;
+}
+
+i {
+    margin-left: 5px;
+    color: #777;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 5px solid;
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 480px) {
+
+    label {
+        margin-top: 10px;
+    }
+}
