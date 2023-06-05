@@ -154,7 +154,7 @@ function shareResult() {
 
   // Contoh: WhatsApp
   window.open(
-    "https://api.whatsapp.com/send?text=" + encodeURIComponent(shareUrl),
+    "https://wa.me/send?text=" + encodeURIComponent(shareUrl),
     "Bagikan di WhatsApp",
     "width=600,height=400"
   );
