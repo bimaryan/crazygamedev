@@ -150,7 +150,7 @@ function displayResult() {
 
 function shareResult() {
   var shareUrl =
-    "https://crazygamedev.netlify.app/quizpython/result?score=" +
+    "https://crazygamedev.netlify.app/result?score=" +
     score +
     "&total=" +
     questions.length +
