@@ -31,12 +31,12 @@ var questions = [
     correctAnswer: 2
   },
   {
-    question: "Apa output dari kode berikut?<br><code>print(2 + 3 * 4 - 6)</code>",
+    question: "Apa output dari kode berikut? print(2 + 3 * 4 - 6)",
     choices: ["-1", "8", "14"],
     correctAnswer: 1
   },
   {
-    question: "Apa yang dilakukan fungsi <code>len()</code> dalam Python?",
+    question: "Apa yang dilakukan fungsi len() dalam Python?",
     choices: [
       "Menghitung panjang dari sebuah string",
       "Mengambil input dari pengguna",
@@ -149,7 +149,7 @@ function displayResult() {
 }
 
 function shareResult() {
-  var shareUrl = "https://example.com/result?score=" + score + "&total=" + questions.length;
+  var shareUrl = "https://crazygamedev.netlify.app/quizpython/result?score=" + score + "&total=" + questions.length;
   // Ganti URL di atas dengan URL yang sesuai untuk hasil kuis Anda
 
   // Contoh: WhatsApp
