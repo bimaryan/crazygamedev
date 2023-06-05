@@ -149,18 +149,24 @@ function displayResult() {
 }
 
 function shareResult() {
-  var shareUrl = "https://crazygamedev.netlify.app/quizpython/result?score=" + score + "&total=" + questions.length;
-  // Ganti URL di atas dengan URL yang sesuai untuk hasil kuis Anda
+  var shareUrl =
+    "https://crazygamedev.netlify.app/quizpython/result?score=" +
+    score +
+    "&total=" +
+    questions.length +
+    "&isi=hasil-kuis";
+  // Ganti "url-disini" dengan isi yang sesuai pada bagian URL yang diinginkan
 
   // Contoh: WhatsApp
   window.open(
-    "https://wa.me/send?text=" + encodeURIComponent(shareUrl),
+    "https://api.whatsapp.com/send?text=" + encodeURIComponent(shareUrl),
     "Bagikan di WhatsApp",
     "width=600,height=400"
   );
 
   // Anda dapat menambahkan logika untuk platform media sosial lainnya di sini
 }
+
 
 function restartQuiz() {
   currentQuestion = 0;
