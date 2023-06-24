@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/style.css"/>
-    <title>SourceCode</title>
+    <title>Source Code Media Social PHP</title>
 
     <style>
 
@@ -88,74 +88,37 @@
     <br>
 
     <div class="container">
-      <h2 class="text-center">Source Code Free</h2>
+
+        <div class="navbar navbar-expand-lg">
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="/sourcecode/" class="btn btn-link navbar-brand"><i class="bi bi-arrow-left"></i></a>
+                        <span class="fw-bold" title="BELAJAR HTML #2 Button Copy Text">BELAJAR PHP #1 DataBase PupukPetani</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <p>code PHP database PupukPetani dengan MySql</p>
+        <p>ini halaman Login nya <code>login.php</code></p>
+        <img src="/sourcecode/media_social/img/login.png" class="card-img-top" alt="gambar halaman home"/>
+        <script src="https://gitlab.com/-/snippets/2561492.js"></script>
+        <p>ini halaman register nya <code>register.php</code></p>
+        <img src="/sourcecode/media_social/img/register.png" class="card-img-top" alt="gambar halaman home"/>
+        <script src="https://gitlab.com/-/snippets/2561493.js"></script>
+        <p>Untuk download database MySql nya silahkan klik di samping ini <a class="" href="" download>Download Disini</a></p>
+        <p class="mt-3">Silahkan langsung lihat Hasil nya <button class="btn btn-info" onclick="show()">DEMO</button></p>
+        <hr/>
+        <div class="card" id="myDIV">
+            <div class="card-header">
+                DEMO
+            </div>
+            <div class="card-body">
+                                          
+            </div>
+        </div>
       
-      <!--HTML, CSS, and JS-->
-      <div class="card mt-4">
-        <div class="card-header">
-          HTML, CSS, and JS
-        </div>
-        <div class="card-body">
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/form/" tabindex="_blank"><i class="bi bi-filetype-html"></i> Cara buat Formulir di HTML5</a>
-            </li>
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/copy/" tabindex="_blank"><i class="bi bi-clipboard"></i> Cara buat Tombol Copy di HTML5</a>
-            </li>
-            <li class="list-group-item">
-              <a class="btn btn-primary disabled" href="" tabindex="_blank" aria-disabled="true"><i class="bi bi-filetype-html"></i> Cara buat Code Editor di HTML5</a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <!--END-->
-
-      <!--PHP-->
-      <div class="card mt-4">
-        <div class="card-header">
-          PHP
-        </div>
-        <div class="card-body">
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/pupuk/" tabindex="_blank"><i class="bi bi-filetype-php"></i> Cara buat database pupuk di PHP</a>
-            </li>
-          </ol>
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/media_social/" tabindex="_blank"><i class="bi bi-filetype-php"></i> Source Code Media Social</a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <!--END-->
-
-      <!--REACTJS-->
-      <div class="card mt-4">
-        <div class="card-header">
-          REACT JS
-        </div>
-        <div class="card-body">
-
-        </div>
-      </div>
-      <!--END-->
-
-      <!--PYTHON-->
-      <div class="card mt-4">
-        <div class="card-header">
-          Python
-        </div>
-        <div class="card-body">
-          <ol class="list-group list-group-numbered">
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="/sourcecode/python/googlecollabkw/" tabindex="_blank"><i class="bi bi-filetype-py"></i> Google Collab KW</a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <!--END-->
     </div>
 
     <hr>
@@ -263,6 +226,37 @@
             })
         })
       })()
+    </script>
+    <script>
+      function show() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+    <script>
+        function copyText() {
+        // Mendapatkan nilai dari elemen input
+        var textToCopy = document.getElementById("text-to-copy").value;
+
+        // Membuat elemen baru untuk menyimpan nilai yang telah dicopy
+        var tempElem = document.createElement("textarea");
+        tempElem.value = textToCopy;
+        document.body.appendChild(tempElem);
+
+        // Memilih elemen baru dan menyalin teks
+        tempElem.select();
+        document.execCommand("copy");
+
+        // Menghapus elemen baru
+        document.body.removeChild(tempElem);
+
+        // Memberikan notifikasi bahwa teks telah berhasil dicopy
+        alert("Teks berhasil dicopy!");
+        }
     </script>
   </body>
 </html>
