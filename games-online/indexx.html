@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://crazygamedev.netlify.app/moodstrap/dist/css/dist/css/moodstrap.css" />
+    <link rel="stylesheet" href="https://crazygamedev.netlify.app/moodstrap/dist/css/moodstrap.min.css" />
+    <title>Coming Soon - Game Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .countdown span {
+            font-size: 30px;
+            margin: 0 10px;
+        }
+
+        .social-media-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-media-icons a {
+            margin: 0 10px;
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-media-icons a:hover {
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>We're working hard to bring you an amazing online game!</p>
+        <div class="countdown">
+            <span id="days">00</span>
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+        </div>
+        <p>Follow us for updates:</p>
+        <div class="social-media-icons">
+            <a href="https://www.youtube.com/channel/UCai-4PijNwR1vr_ZRqK9mVg" target="_blank">Youtube</a>
+            <a href="https://www.tiktok.com/@ryazel_" target="_blank">Tiktok</a>
+            <a href="https://www.instagram.com/bima_ryan23/" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+
+    <script src="https://crazygamedev.netlify.app/moodstrap/dist/css/moodstrap.min.js"></script>
+
+    <script>
+        // Set the date we're counting down to (replace with your desired launch date)
+        var countDownDate = new Date("2023-06-01T00:00:00Z").getTime();
+
+        // Update the countdown every 1 second
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "Game is now live!";
+                window.location.href = "/games-online/game.html"; // Mengarahkan pengguna ke file game.html
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
